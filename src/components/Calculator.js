@@ -66,6 +66,7 @@ function Calculator() {
 
   return (
     <div className="calculator">
+      
       <input type="text" className="display" value={displayValue} readOnly />
       <div className="keypad">
         <div className="input-keys">
