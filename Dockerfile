@@ -5,4 +5,4 @@ COPY src/ /simple-test/src
 COPY package.json /simple-test/
 RUN npm config set update-notifier false
 RUN npm install
-CMD [“npm”, “start”]
+CMD ["npm", "start"]
