@@ -1,8 +1,12 @@
-FROM node:19.5.0-alpine
+FROM node:20-alpine
+
 WORKDIR /simple-test/
+
+COPY package.json package-lock.json* /simple-test/
+RUN npm config set update-notifier false && \
+    npm ci --no-audit --no-fund
+
 COPY public/ /simple-test/public
 COPY src/ /simple-test/src
-COPY package.json /simple-test/
-RUN npm config set update-notifier false
-RUN npm install
+
 CMD ["npm", "start"]
